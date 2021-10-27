@@ -1,0 +1,28 @@
+ .mat-form-field + .mat-form-field {
+    margin-left: 10px;
+  }
+
+  .demo-table {
+    width: 100%;
+  }
+  
+  .mat-row .mat-cell {
+    border-bottom: 1px solid transparent;
+    border-top: 1px solid transparent;
+  }
+  
+  .mat-header-cell{
+    font-weight:bold;
+  }
+
+  .add-button {
+    padding-top: 1%;
+    padding-right:3%;
+    float: right;
+  }
+
+  .submit-button {
+    padding-right:3%;
+    padding-top:1%;
+    float: right;
+  }

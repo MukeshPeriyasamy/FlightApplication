@@ -1,0 +1,45 @@
+<mat-card style = "background-color:rgb(240, 237, 234);">
+    <b>Fill the below details to create a new flight schedule</b>
+  <form [formGroup]="scheduleForm" > 
+    <mat-form-field appearance="outline">
+      <mat-label>Airline Name</mat-label>
+      <input matInput type="text" formControlName="airlineName" required>
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Flight Name</mat-label>
+      <input matInput type="text" formControlName="flightName">
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Start Place</mat-label>
+      <input matInput type="text" formControlName="startPlace">
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+        <mat-label>End Place</mat-label>
+        <input matInput type="text" formControlName="endPlace">
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Start Time</mat-label>
+        <input matInput type="text" formControlName="startTime">
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>End Time</mat-label>
+        <input matInput type="text" formControlName="endTime">
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Schedule Day</mat-label>
+        <mat-select formControlName="scheduleDay">
+          <mat-option value="daily">Daily</mat-option>
+          <mat-option value="weekdays">Weekdays</mat-option>
+          <mat-option value="weekend">Weekend</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Price</mat-label>
+        <input matInput type="number" formControlName="price">
+      </mat-form-field>
+
+    <span class="add-button">
+      <button mat-raised-button color="primary" [disabled] ="scheduleForm.invalid" (click) = "addSchedule()" >Create Schedule</button>
+    </span> 
+  </form>
+</mat-card>

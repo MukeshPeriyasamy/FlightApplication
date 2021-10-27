@@ -1,0 +1,32 @@
+ .mat-form-field + .mat-form-field {
+    margin-left: 20px;
+  }
+
+  .add-button{
+    margin-left: 20px;
+  }
+
+  button{
+    padding-left: 2%;
+    padding-right: 2%;
+    width:10%;
+  }
+
+  .demo-table {
+    width: 100%;
+  }
+  
+  .mat-row .mat-cell {
+    border-bottom: 1px solid transparent;
+    border-top: 1px solid transparent;
+    cursor: pointer;
+  }
+  
+  .mat-header-cell{
+    font-weight:bold;
+  }
+
+  .mat-row:hover {
+    border-color: currentColor;
+    background-color: #E8EAF6;
+  }

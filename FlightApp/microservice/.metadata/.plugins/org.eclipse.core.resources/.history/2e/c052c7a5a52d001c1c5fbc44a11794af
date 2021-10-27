@@ -1,0 +1,43 @@
+package com.flightapp;
+
+import java.time.LocalDateTime;
+import java.util.Arrays;
+import java.util.List;
+
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
+import org.mockito.Mockito;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.boot.test.mock.mockito.MockBean;
+
+import com.demo.entities.Book;
+import com.flightapp.entities.Flight;
+import com.flightapp.repositories.FlightRepository;
+import com.flightapp.services.FlightService;
+
+@SpringBootTest
+class FlightServiceApplicationTests {
+
+	@Autowired
+	private FlightService flightService;
+	
+	@MockBean
+	private FlightRepository flightRepo;
+	
+	 @Test
+	    public void shouldGetAllFlight(){
+
+	        Mockito
+	            .when(flightRepo.findAll())
+	            .thenReturn(Arrays.asList(
+	                new Flight("ind101", 60, 1, "Indigo"),
+	                new Flight("ind102", 80, 1, "Indigo")
+	             ));
+
+	        List<Flight> flights = flightService.findAllFlights();
+	        System.out.println(flights);
+
+	        Assertions.assertTrue(flights.size()>0);
+	    }
+}

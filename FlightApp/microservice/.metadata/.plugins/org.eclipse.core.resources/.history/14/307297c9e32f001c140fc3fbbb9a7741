@@ -1,0 +1,38 @@
+package com.flightapp.servicesimpl;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.flightapp.entities.Flight;
+import com.flightapp.repositories.FlightRepository;
+import com.flightapp.services.FlightService;
+
+@Service
+public class FlightServiceImpl implements FlightService {
+
+	@Autowired
+	FlightRepository flightRepository;
+
+	public List<Flight> findAllFlights(){
+		return flightRepository.findAll();	
+	}
+	
+	public Flight saveFlight(Flight flight){
+		return flightRepository.save(flight);	
+	}
+	
+	public Flight findFlightByName(String name){
+		Flight flightDetails = flightRepository.findByName(name);
+		if(null != flightDetails) {
+		return flightRepository.findByName(name);
+		}
+		return new Flight();
+	}
+
+	public List<Flight> findFlightByAirline(String airline) {
+		return flightRepository.findByAirline(airline) ;
+	}
+	
+}
